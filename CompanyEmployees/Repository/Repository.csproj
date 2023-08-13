@@ -11,5 +11,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Configuration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\" />
   </ItemGroup>
 </Project>
