@@ -20,6 +20,7 @@ public class CompaniesController : ControllerBase
     public IActionResult GetCompanies()
     {
         var companies = _service.CompanyService.GetAllCompanies(trackChanges: false);
+
         return Ok(companies);
     }
 
@@ -27,6 +28,7 @@ public class CompaniesController : ControllerBase
     public IActionResult GetCompany(Guid id)
     {
         var company = _service.CompanyService.GetCompany(id, trackChanges: false);
+
         return Ok(company);
     }
 
@@ -55,6 +57,14 @@ public class CompaniesController : ControllerBase
         var result = _service.CompanyService.CreateCompanyCollection(companyCollection);
 
         return CreatedAtRoute("CompanyCollection", new { result.ids }, result.companies);
+    }
+
+    [HttpDelete("{id:guid}")]
+    public IActionResult DeleteCompany(Guid id)
+    {
+        _service.CompanyService.DeleteCompany(id, trackChanges: false);
+
+        return NoContent();
     }
 }
 
