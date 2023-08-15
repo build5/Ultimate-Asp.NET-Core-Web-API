@@ -14,8 +14,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
+    <None Remove="ModelBinders\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="ModelBinders\" />
   </ItemGroup>
 </Project>
