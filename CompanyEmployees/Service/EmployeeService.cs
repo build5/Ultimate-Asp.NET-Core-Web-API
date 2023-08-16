@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Reflection.Metadata;
+using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
 using Entities.Models;
@@ -88,5 +89,26 @@ internal sealed class EmployeeService : IEmployeeService
 		_mapper.Map(employeeForUpdate, employeeEntity);
 		_repository.Save();
 	}
+
+    public (EmployeeForUpdateDto employeeToPatch, Employee employeeEntity) GetEmployeeForPatch(Guid companyId, Guid id, bool compTrachChanges, bool empTrackChanges)
+    {
+		var company = _repository.Company.GetCompany(companyId, compTrachChanges);
+		if (company is null)
+			throw new CompanyNotFoundException(companyId);
+
+		var employeeEntity = _repository.Employee.GetEmployee(companyId, id, empTrackChanges);
+		if (employeeEntity is null)
+			throw new EmployeeNotFoundException(id);
+
+		var employeeToPatch = _mapper.Map<EmployeeForUpdateDto>(employeeEntity);
+
+		return (employeeToPatch, employeeEntity);
+    }
+
+    public void SaveChangesForPatch(EmployeeForUpdateDto employeeToPatch, Employee employeeEntity)
+    {
+		_mapper.Map(employeeToPatch, employeeEntity);
+		_repository.Save();
+    }
 }
 
