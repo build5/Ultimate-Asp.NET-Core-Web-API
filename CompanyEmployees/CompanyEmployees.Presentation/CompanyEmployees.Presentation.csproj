@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="7.0.10" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj" />
