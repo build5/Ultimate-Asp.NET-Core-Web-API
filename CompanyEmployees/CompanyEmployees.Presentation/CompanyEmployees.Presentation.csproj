@@ -17,9 +17,11 @@
   <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="ModelBinders\" />
+    <None Remove="ActionFilters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="ModelBinders\" />
+    <Folder Include="ActionFilters\" />
   </ItemGroup>
 </Project>
