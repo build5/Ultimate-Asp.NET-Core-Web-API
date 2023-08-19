@@ -15,8 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configuration\" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>
