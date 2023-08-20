@@ -13,4 +13,10 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="DataShaping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataShaping\" />
+  </ItemGroup>
 </Project>
