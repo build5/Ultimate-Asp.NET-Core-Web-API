@@ -75,7 +75,8 @@ public class Entity : DynamicObject, IXmlSerializable, IDictionary<string, objec
             foreach (var val in value as List<Link>)
             {
                 writer.WriteStartElement(nameof(Link));
-                WriteLinksToXml(nameof(val.Href), val.Method, writer);
+                WriteLinksToXml(nameof(val.Href), val.Href, writer);
+                WriteLinksToXml(nameof(val.Method), val.Method, writer);
                 WriteLinksToXml(nameof(val.Rel), val.Rel, writer);
                 writer.WriteEndElement();
             }
