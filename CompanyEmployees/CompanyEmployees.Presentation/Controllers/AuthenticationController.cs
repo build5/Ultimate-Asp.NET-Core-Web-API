@@ -30,6 +30,7 @@ public class AuthenticationController : ControllerBase
 			}
 			return BadRequest(ModelState);
 		}
+
 		return StatusCode(201);
 	}
 
@@ -39,7 +40,9 @@ public class AuthenticationController : ControllerBase
 	{
 		if (!await _service.AuthenticationService.ValidateUser(user))
 			return Unauthorized();
-		return Ok(new { Token = await _service.AuthenticationService.CreateToken() });
+		var tokenDto = await _service.AuthenticationService.CreateToken(populateExp: true);
+
+		return Ok(tokenDto);
 	}
 }
 

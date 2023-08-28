@@ -133,7 +133,7 @@ public static class ServiceExtensions
     public static void ConfigureJwt(this IServiceCollection services, IConfiguration configuration)
     {
         var jwtSettings = configuration.GetSection("JwtSettings");
-        var secretKey = "secretKeyForJwtSecretCreationWhichNeedsToBeMoreThan256bits";
+        var secretKey = "CodeMazeSecretKeyForCredentialSecurityAlgorithm";
         services.AddAuthentication(opt =>
         {
             opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
