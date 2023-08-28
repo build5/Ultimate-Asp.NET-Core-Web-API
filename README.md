@@ -27,6 +27,9 @@ dotnet build
 dotnet run
 ```
 Download [Postman](https://www.postman.com)
+## Note
++ **The api rate limit is 3 requests per 5 minutes. This behaviour could be changed in [ServiceExtensions](CompanyEmployees/CompanyEmployees/Extensions/ServiceExtensions.cs)**
++ **The GetCompanies action is protected by authorization and needs a user with Manage role.**
 ## Supported endpoints
 Get all Companies:
 
@@ -72,3 +75,10 @@ Partially update an employee for a company by providing company's id and employe
 
 https://localhost:5001/api/companies/{companyid}/employees/{employeeid}
 
+Create new User: 
+
+https://localhost:5001/api/authentication
+
+Login endpoint:
+
+https://localhost:5001/api/authentication/login
