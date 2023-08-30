@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="DataShaping\" />
