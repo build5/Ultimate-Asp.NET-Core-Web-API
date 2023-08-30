@@ -134,6 +134,7 @@ public static class ServiceExtensions
     public static void ConfigureJwt(this IServiceCollection services, IConfiguration configuration)
     {
         var jwtConfiguration = new JwtConfiguration();
+        configuration.Bind(jwtConfiguration.Section, jwtConfiguration);
         var secretKey = "CodeMazeSecretKeyForCredentialSecurityAlgorithm";
         services.AddAuthentication(opt =>
         {
